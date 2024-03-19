@@ -23,7 +23,7 @@ const PORT = process.env.PORT || 8000;      // for dynamically change by service
 // MongoDB connection
 // connectToMongoDB("mongodb://127.0.0.1:27017/urlShortnerProject")         --> local mongoDB
 console.log(process.env.MONGO_URL);
-connectToMongoDB(process.env.MONGO_URL)         // online mongo
+connectToMongoDB("mongodb+srv://pkmanas22:urlShortener@cluster0.2sothnp.mongodb.net/urlProjects")         // online mongo
     .then(() => console.log("Mongo connected successfully"))
     .catch((err) => {
         console.error("Error while connecting to MongoDb");
