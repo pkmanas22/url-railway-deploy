@@ -3,7 +3,7 @@ const { setUser } = require('../services/jwtAuth')
 
 async function handleUserSignup(req, res) {
     const { name, email, password } = req.body;
-    console.log(name + email + password);
+    console.log("hii");
 
     const existingEmail = await UserModel.findOne({ email });
     // console.log(existingEmail ? existingEmail.email + " " + email : "No existing email found");
