@@ -4,7 +4,10 @@ const { handleUserLogin, handleUserSignup, handleUserLogout } = require("../cont
 
 const router = express.Router();
 
-router.post('/login', handleUserLogin);
+// router.post('/login', handleUserLogin);
+router.post('/login', (req, res) => {
+    res.send("Login page")
+});
 
 router.post('/signup', handleUserSignup);
 
