@@ -24,7 +24,10 @@ const PORT = process.env.PORT || 8000;      // for dynamically change by service
 // connectToMongoDB("mongodb://127.0.0.1:27017/urlShortnerProject")         --> local mongoDB
 connectToMongoDB(process.env.MONGO_URL)         // online mongo
     .then(() => console.log("Mongo connected successfully"))
-    .catch((err) => console.error("Error while connecting to MongoDb"))
+    .catch((err) => {
+        console.error("Error while connecting to MongoDb");
+        console.log(err);
+    })
 
 // Configuring EJS view engine
 app.set('view engine', 'ejs');
