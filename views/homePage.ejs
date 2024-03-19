@@ -62,7 +62,7 @@
             <% if (urls.length !=0) { %>
                 <% urls.reverse().forEach(url=> { %>
                     <div class="table-row">
-                        <a href="http://localhost:8000/url/<%= url.shortId %>" target="_blank">http://localhost:8000/<%=
+                        <a href="https://url-railway-deploy-production.up.railway.app/url/<%= url.shortId %>" target="_blank">https://url-railway-deploy-production.up.railway.app/<%=
                                 url.shortId %></a>
                         <div class="originalLink"><img src="" alt="" style="border-radius: 30%;">
                             <%= url.redirectUrl %>
