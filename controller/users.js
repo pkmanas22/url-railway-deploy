@@ -4,15 +4,15 @@ const { setUser } = require('../services/jwtAuth')
 async function handleUserSignup(req, res) {
     const { name, email, password } = req.body;
 
-    const existingEmail = await UserModel.findOne({ email });
-    console.log(existingEmail ? existingEmail.email + " " + email : "No existing email found");
-
-    if (existingEmail && email === existingEmail.email) {
-        const errorMessage = `The provided email address is already registered with us. Please use a different email address.`;
-        return res.render("trialPage", { error: errorMessage });
-    }
-
     try {
+        const existingEmail = await UserModel.findOne({ email });
+        console.log(existingEmail ? existingEmail.email + " " + email : "No existing email found");
+
+        if (existingEmail && email === existingEmail.email) {
+            const errorMessage = `The provided email address is already registered with us. Please use a different email address.`;
+            return res.render("trialPage", { error: errorMessage });
+        }
+
         const newUser = await UserModel.create({
             name,
             email,
